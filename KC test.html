@@ -1,0 +1,62 @@
+
+<div id="paypal-button"></div>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+  success = 0;
+  paypal.Button.render({
+    // Configure environment
+    env: 'sandbox',
+    client: {
+      sandbox: 'AXcfq9nwKIzd4M0ykh8RoWay_W9V-LGnFZJWoWpvcORGJ186yKOCBzImZje1x5wyxg6YgzAx6tum-wZb',
+      production: 'demo_production_client_id'
+    },
+    // Customize button (optional)
+    locale: 'en_US',
+    style: {
+      size: 'small',
+      color: 'gold',
+      shape: 'pill',
+    },
+
+    // Enable Pay Now checkout flow (optional)
+    commit: true,
+
+    // Set up a payment
+    payment: function(data, actions) {
+      return actions.payment.create({
+        transactions: [{
+          amount: {
+            total: '30.00',
+            currency: 'USD'
+          }
+        }]
+      });
+    },
+    // Execute the payment
+
+    onAuthorize: function(data, actions) {
+      return actions.payment.execute().then(function() {
+        // Show a confirmation message to the buyer
+        //console.log(success);
+        window.alert('Thank you for your purchase!');
+        //success = 1;
+        //console.log(success);
+
+	 onAuthorize: function (data, actions) {
+    	// Get the payment details
+	    return actions.payment.get()
+      	    .then(function (paymentDetails) {
+        // Show a confirmation using the details from paymentDetails
+        // Then listen for a click on your confirm button
+            document.querySelector('#confirm-button')
+            .addEventListener('click', function () {
+            // Execute the payment
+            return actions.payment.execute()
+              .then(function () {
+                // Show a success page to the buyer
+              });
+      });
+    }
+  }, '#paypal-button');
+
+</script>

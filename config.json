@@ -1,0 +1,23 @@
+{
+    "boatname": "Invictus",
+    "numofpumps": "2",
+    "password": "19Ijctsily!83",
+    "pump1": "Thruster compartment",
+    "pump2": "Battery compartment",
+    "pump3": "Workbench compartment",
+    "pump4": "Chiller compartment",
+    "pump5": "Engine Room",
+    "pump6": "Lazarette",
+    "pump7": "none",
+    "pump8": "none",
+    "via_sms":   "6",
+    "via_email": "5",
+    "sms_recip1": "8132639349",
+    "sms_recip2": "8135412231",
+    "recipient1": "don.laneve@gmail.com",
+    "recipient2": "don@laneve.com",
+    "reminder_target": "60",
+    "smtpport": "587",
+    "smtpserver": "smtp.gmail.com",
+    "username": "Don.laneve@gmail.com"
+}

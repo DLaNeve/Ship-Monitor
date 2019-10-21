@@ -1,0 +1,64 @@
+** FEATURES:
+-Bilge Pump Monitor
+-Power monitor
+    check both phases?
+-Temperatures
+-Battery Bank level
+-Historic realtime data
+
+
+** NOTIFICATIONS:
+    Email
+    SMS
+        add mulitiple recipients
+
+
+** HARDWARE
+-add N2K interface
+-locate fwd bilge pump issue
+-find method to get house battery level
+-design build thermal option
+    RF transmitter
+    RF receiver
+
+
+** SOFTWARE DESIGN:
+-Python3
+-SQLite DB to hold all measurements, logs and alerts
+-Apache
+    Phone web browser to view data
+    add ability to connect from outside network
+
+
+** TASKs:
+-clean code     **DONE**
+-consolidate    **DONE**
+-add/fix error traps
+-create functions
+    ShorePower Status   **DONE**
+    House bank status
+    Bilge Pumps         **DONE**
+    Thermal Data
+    Read and store N2K data
+
+-modify power alert off duration to hours after 60 minutes    **DONE**
+-add SQLite
+    Config table        **DONE**
+    Alerts table        **DONE**
+    Data recording
+
+
+-add thermal procedures
+-create user setup interface
+-create user data interface
+
+Power monitor DLT
+
+
+Power OFF
+Pin 5 False duration = 0        power failure                   log power failure
+Pin 5 False duration > 0        power remains off               log power still off, calc duration
+
+Power ON
+Pin 5 True duration > 0         power restored                  log restored, calc duration
+Pin 5 True duration = 0         do nothing                      n/a
